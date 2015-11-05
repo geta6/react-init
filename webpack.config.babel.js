@@ -57,9 +57,6 @@ const config = {
       {
         test: /\.json$/,
         loader: 'json',
-      }, {
-        test: /\.(png|jpg|gif|svg)$/,
-        loaders: ['url?limit=10000', 'img?minimize'],
       },
     ],
   },
