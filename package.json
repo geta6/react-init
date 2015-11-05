@@ -1,0 +1,110 @@
+{
+  "name": "react-init",
+  "version": "1.0.0",
+  "description": "react init.",
+  "main": "build",
+  "private": true,
+  "author": "geta6",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/geta6/react-init.git"
+  },
+  "engines": {
+    "node": ">=4.2 <5",
+    "npm": ">=2 <3"
+  },
+  "scripts": {
+    "test": "stylint src && eslint src && jest",
+    "build": "gulp build --release",
+    "start": "gulp start --watch"
+  },
+  "jest": {
+    "rootDir": "./src",
+    "collectCoverage": true,
+    "scriptPreprocessor": "../preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "fbjs",
+      "react",
+      "fluxible"
+    ],
+    "globals": {
+      "__DEV__": true
+    }
+  },
+  "apps": [
+    {
+      "name": "media:server",
+      "script": "server.js",
+      "exec_mode": "cluster_mode",
+      "port": "3001",
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "dependencies": {
+    "babel-core": "^5.8.29",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "fbjs": "^0.4.0",
+    "flux": "^2.1.1",
+    "fluxible": "^1.0.0",
+    "fluxible-addons-react": "^0.2.0",
+    "fluxible-router": "^0.3.0",
+    "immutable": "^3.7.5",
+    "lodash": "^3.10.1",
+    "pm2": "^0.15.7",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-immutable-proptypes": "^1.5.0",
+    "react-routing": "0.0.5",
+    "serialize-javascript": "^1.1.2",
+    "source-map-support": "^0.3.2",
+    "superagent": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-react-transform": "^1.1.1",
+    "browser-sync": "^2.9.11",
+    "css-loader": "^0.21.0",
+    "del": "^2.0.2",
+    "eslint": "^1.7.3",
+    "eslint-config-airbnb": "^0.1.0",
+    "eslint-plugin-import": "^0.8.1",
+    "eslint-plugin-react": "^3.5.3",
+    "file-loader": "^0.8.4",
+    "gaze": "^0.5.2",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "imagemin": "^3.2.2",
+    "img-loader": "^1.2.0",
+    "jest-cli": "^0.6.0",
+    "json-loader": "^0.5.3",
+    "ncp": "^2.0.0",
+    "nib": "^1.1.0",
+    "react-addons-test-utils": "^0.14.0",
+    "react-hot-loader": "^1.3.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
+    "replace": "^0.3.0",
+    "run-sequence": "^1.1.4",
+    "style-loader": "^0.13.0",
+    "stylint": "^1.2.5",
+    "stylint-stylish": "^1.2.0",
+    "stylus-loader": "^1.4.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.4.1"
+  },
+  "optionalDependencies": {
+    "commander": "^2.9.0",
+    "daemon": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "mktemp": "^0.4.0"
+  }
+}
